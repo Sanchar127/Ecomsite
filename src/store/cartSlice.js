@@ -8,7 +8,9 @@ const cartSlice= createSlice({
     initialState:[],
     reducers:{
         add(state,action){
-            state.push(action.payload)
+         // Create a new item with a unique cartItemId
+         const newItem = { ...action.payload, cartItemId: Date.now() };
+         state.push(newItem);
         },
         remove(state,action){
             return state.filter(item => item.id !== action.payload);

@@ -23,7 +23,7 @@ const Products = () => {
     <div className='productsWrapper'>
       {
         products.map(product => (
-          <div className='card' key={product.id}>
+          <div className='card' key={product.cartItemId}>
             <img src={product.image} alt={product.title}/>
             <h4>{product.title}</h4>
             <button onClick={() => handleAdd(product)} className='btn'>Add to cart</button>
